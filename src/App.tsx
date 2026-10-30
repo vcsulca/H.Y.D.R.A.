@@ -3,7 +3,7 @@ import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
 import { Home, Map, BarChart3, Leaf, Mountain, Users, BookOpen, Database, Download, Search, Moon, Sun, Layers3, Plus, Minus, LocateFixed, RotateCw, ArrowRight, CloudRain, Droplets, Waves, ChevronDown, ExternalLink, Menu, Info, FileText, Check } from 'lucide-react'
 import TerritoryMap from './TerritoryMap'
-import { salars, precipitation, years, spiRows, ndvi, grace } from './data'
+import { salars, salarImages, defaultSalarImage, precipitation, years, spiRows, ndvi, grace } from './data'
 import './App.css'
 
 const colors = { text: '#f5f0ed', secondary: '#a6a9b2', grid: '#292b33', burgundy: '#a63858', water: '#49b9c5', green: '#76b899', gold: '#d1a46a' }
@@ -140,7 +140,7 @@ export default function App() {
         </div>
 
         <aside className="territory-card">
-          <div className="territory-photo"><img src="/salar-arizaro.jpg" alt="Paisaje del salar y cordillera"/><span>FICHA TERRITORIAL</span></div>
+          <div className="territory-photo"><img key={salar.id} src={salarImages[salar.id] ?? defaultSalarImage} alt={`Paisaje del ${salar.name}`} onError={e => { e.currentTarget.src = defaultSalarImage }}/><span>FICHA TERRITORIAL</span></div>
           <div className="territory-body"><h2>{salar.name}</h2><div className="tabs">{['Resumen','Hidroclima','Ecosistemas','Proyectos'].map(t => <button className={activeTab===t?'active':''} onClick={() => setActiveTab(t)} key={t}>{t}</button>)}</div>
             {activeTab === 'Resumen' && <dl><div><dt>Superficie</dt><dd>{salar.surface} km²</dd></div><div><dt>Cuenca</dt><dd>{salar.basin}</dd></div><div><dt>Altitud media</dt><dd>{salar.altitude} m s. n. m.</dd></div><div><dt>Tipo</dt><dd>Salar</dd></div><div><dt>Proyectos cercanos</dt><dd className="accent">{salar.projects} <small>(ver detalle)</small></dd></div><div><dt>Comunidades</dt><dd>{salar.communities} <small>(en cuenca)</small></dd></div></dl>}
             {activeTab === 'Hidroclima' && <div className="tab-detail"><CloudRain/><strong>Serie 2002–{period}</strong><p>Precipitación, SPI-6 y almacenamiento regional. Valores de demostración; consulte los gráficos vinculados.</p><button onClick={() => goTo('Hidroclima','hidroclima')}>Explorar series <ArrowRight size={14}/></button></div>}

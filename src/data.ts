@@ -1,10 +1,35 @@
+// Fuente: USGS 2020 (salares) y COHIFE (cuencas), procesados en analisis-hidrico-triangulo-litio.
+// surface = km² (polígono USGS). altitude / projects / communities: 's/d' = sin dato en el análisis todavía.
 export const salars = [
-  { id: 'arizaro', name: 'Salar de Arizaro', coords: [-67.72, -24.93] as [number, number], surface: '1.600', basin: 'Sistema Arizaro', altitude: '3.720', projects: 3, communities: 12 },
-  { id: 'rincon', name: 'Salar del Rincón', coords: [-67.10, -24.10] as [number, number], surface: '260', basin: 'Sistema Rincón', altitude: '3.740', projects: 2, communities: 5 },
-  { id: 'cauchari', name: 'Salar de Cauchari', coords: [-66.88, -23.62] as [number, number], surface: '550', basin: 'Sistema Cauchari', altitude: '3.950', projects: 4, communities: 8 },
-  { id: 'olaroz', name: 'Salar de Olaroz', coords: [-66.70, -23.43] as [number, number], surface: '120', basin: 'Sistema Olaroz', altitude: '3.900', projects: 2, communities: 6 },
-  { id: 'pocitos', name: 'Salar de Pocitos', coords: [-67.02, -24.45] as [number, number], surface: '435', basin: 'Sistema Pocitos', altitude: '3.660', projects: 1, communities: 7 },
+  { id: 'arizaro', name: 'Salar de Arizaro', coords: [-67.79, -24.72] as [number, number], surface: '1.993', basin: 'Salar de Arizaro', altitude: 's/d', projects: 's/d', communities: 's/d' },
+  { id: 'pocitos', name: 'Salar de Pocitos', coords: [-67.06, -24.53] as [number, number], surface: '665', basin: 'Salar de Pocitos o Quirón', altitude: 's/d', projects: 's/d', communities: 's/d' },
+  { id: 'rincon', name: 'Salar del Rincón', coords: [-67.12, -24.01] as [number, number], surface: '675', basin: 'Salar de Rincón', altitude: 's/d', projects: 's/d', communities: 's/d' },
+  { id: 'centenario', name: 'Salar de Centenario', coords: [-66.75, -24.9] as [number, number], surface: '88', basin: 'Cuencas endorreicas en Salta', altitude: 's/d', projects: 's/d', communities: 's/d' },
+  { id: 'diablillos', name: 'Salar de Diablillos', coords: [-66.74, -25.26] as [number, number], surface: '42', basin: 'Cuencas endorreicas en Salta y Catamarca', altitude: 's/d', projects: 's/d', communities: 's/d' },
+  { id: 'pozuelos', name: 'Salar de Pozuelos', coords: [-66.81, -24.71] as [number, number], surface: '86', basin: 'Salar de Pozuelos', altitude: 's/d', projects: 's/d', communities: 's/d' },
+  { id: 'ratones', name: 'Salar de Ratones', coords: [-66.8, -25.12] as [number, number], surface: '53', basin: 'Cuencas endorreicas en Salta', altitude: 's/d', projects: 's/d', communities: 's/d' },
+  { id: 'rio-grande', name: 'Salar de Río Grande', coords: [-68.14, -25.14] as [number, number], surface: '181', basin: 'Salar de Río Grande', altitude: 's/d', projects: 's/d', communities: 's/d' },
+  { id: 'tolillar', name: 'Salar Tolillar', coords: [-67.11, -25.1] as [number, number], surface: '45', basin: 'Cuencas endorreicas en Salta', altitude: 's/d', projects: 's/d', communities: 's/d' },
+  { id: 'pastos-grandes', name: 'Salar Pastos Grandes', coords: [-66.69, -24.57] as [number, number], surface: '34', basin: 'Salar de Pastos Grandes', altitude: 's/d', projects: 's/d', communities: 's/d' },
+  { id: 'tolar-grande', name: 'Salar Tolar Grande', coords: [-67.39, -24.63] as [number, number], surface: '14', basin: 'Cuencas endorreicas en Salta', altitude: 's/d', projects: 's/d', communities: 's/d' },
 ]
+
+const IMG = '/assets/images/'
+
+export const salarImages: Record<string, string> = {
+  arizaro: `${IMG}Salar_de_Arizaro.jpg`,
+  pocitos: `${IMG}Salar_de_Pocitos.jpg`,
+  rincon: `${IMG}Salar_del_Rincon.jpg`,
+  centenario: `${IMG}Salar_de_Centenario.jpg`,
+  diablillos: `${IMG}Salar_de_Diablillos.jpg`,
+  pozuelos: `${IMG}Salar_de_Pozuelos.jpg`,
+  ratones: `${IMG}Salar_de_Ratones.jpg`,
+  'rio-grande': `${IMG}Salar_de_Rio_Grande.jpg`,
+  tolillar: `${IMG}Salar_de_Tolillar.jpg`,
+  'pastos-grandes': `${IMG}Salar_Pastos_Grandes.jpg`,
+  'tolar-grande': `${IMG}Tolar_Grande_Salar.jpg`,
+}
+export const defaultSalarImage = '/puna-montanas.jpg'
 
 export const projects = [
   { name: 'Rincón', coords: [-67.03, -24.04], stage: 'Operación' },
