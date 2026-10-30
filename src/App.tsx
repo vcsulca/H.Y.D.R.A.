@@ -16,7 +16,7 @@ function downloadFile(name: string, content: string, type = 'text/csv') {
 }
 
 function Logo() {
-  return <svg viewBox="0 0 70 54" className="brand-mark" aria-hidden="true"><path d="M5 45 25 12l9 14L46 4l20 41H52L44 22l-9 15-10-16-9 24Z" fill="none" stroke="currentColor" strokeWidth="2"/><path d="m7 46 18-6 9 6 11-7 20 7M25 12l-2 33M46 4l-1 35" fill="none" stroke="currentColor" strokeWidth="1.4"/></svg>
+  return <img src="/assets/Logo_Salta.svg" alt="Agua en Salta" className="brand-mark" />
 }
 
 type ModalKind = 'project' | 'method' | 'downloads' | 'open' | 'communities' | null
